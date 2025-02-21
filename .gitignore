@@ -71,7 +71,7 @@ instance/
 
 # Scrapy stuff:
 
-data/measurements.txt
+data/measurements10M.txt
 
 .scrapy
 
