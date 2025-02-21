@@ -96,7 +96,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
     print('Criando o arquivo... isso vai demorar uns 10 minutos...')
 
     try:
-        with open("./data/measurements.txt", 'w', encoding="utf-8") as file:
+        with open("./data/measurements1B.txt", 'w', encoding="utf-8") as file:
             for s in range(0,num_rows_to_create // batch_size):
                 
                 batch = random.choices(station_names_10k_max, k=batch_size)
@@ -111,7 +111,7 @@ def build_test_data(weather_station_names, num_rows_to_create):
     
     end_time = time.time()
     elapsed_time = end_time - start_time
-    file_size = os.path.getsize("./data/measurements.txt")
+    file_size = os.path.getsize("./data/measurements1B.txt")
     human_file_size = convert_bytes(file_size)
  
     print("Arquivo escrito com sucesso data/measurements.txt")
@@ -123,7 +123,7 @@ def main():
     """
     main program function
     """
-    num_rows_to_create = 10_000_000
+    num_rows_to_create = 1_000_000_000
     weather_station_names = []
     weather_station_names = build_weather_station_name_list()
     print(estimate_file_size(weather_station_names, num_rows_to_create))
